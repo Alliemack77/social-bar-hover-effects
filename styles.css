@@ -1,0 +1,114 @@
+*, 
+*::after, 
+*::before {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+    background-color: #27272c;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #d367c1;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+}
+
+.container {
+    width: min(1200px, 100% - (1rem * 2));
+    margin-inline: auto;
+    display: grid;
+    place-content: center;
+}
+
+.social-list {
+    margin-block: 5rem;
+    display: flex;
+    gap: 4rem;
+}
+
+/* Levitate Hover Effect */
+svg[data-prefix="fab"],
+svg[data-prefix="far"], 
+svg[data-prefix="fas"] {
+    padding: 1rem;
+    font-size: 2.5rem;
+}
+
+svg[data-prefix="fab"] {
+    color: #d367c1;
+    will-change: translate;
+    transition: translate 150ms;
+}
+
+.social-link:hover svg[data-prefix="fab"] {
+    transition: translate 450ms;
+    translate: 0px -10px;
+}
+
+/* Blinking Hover Effect */
+svg[data-prefix="far"], 
+svg[data-prefix="fas"] {
+    color: #ab79d6;
+    will-change: translate;
+    transition: translate 150ms;
+}
+
+.button {
+    padding: .6250em 1em;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ab79d6;
+    color: #27272c;
+    border: none;
+}
+
+.social-item:has(.button) {
+    align-self: center;
+}
+
+.social-link:hover svg[data-prefix="far"],
+.social-link:hover svg[data-prefix="fas"],
+.button:hover .background {
+    transition: translate 450ms;
+    translate: 0px -10px;
+}
+
+
+
+
+
+
+
+
