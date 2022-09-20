@@ -81,8 +81,6 @@ svg[data-prefix="fab"] {
 svg[data-prefix="far"], 
 svg[data-prefix="fas"] {
     color: #ab79d6;
-    will-change: translate;
-    transition: translate 150ms;
 }
 
 .button {
@@ -92,19 +90,41 @@ svg[data-prefix="fas"] {
     background-color: #ab79d6;
     color: #27272c;
     border: none;
+    border-radius: 2px;
 }
 
 .social-item:has(.button) {
     align-self: center;
 }
 
-.social-link:hover svg[data-prefix="far"],
-.social-link:hover svg[data-prefix="fas"],
-.button:hover .background {
-    transition: translate 450ms;
-    translate: 0px -10px;
+.social-link svg[data-prefix="far"] path,
+.social-link svg[data-prefix="fas"] path,
+.button {
+    transition-duration: .55s;
+    transform-origin: center;
+    transform-box: fill-box;
+} 
+
+.social-link:hover svg[data-prefix="far"] path,
+.social-link:hover svg[data-prefix="fas"] path,
+.button:hover {
+    transform: scale(1.25);
+    transition-duration: .55s;
+} 
+
+svg[data-prefix="fas"]:hover{
+    animation: blink 1sec ease-in-out forwards;
 }
 
+
+@keyframes blink {
+    70% {
+        color: transparent;
+    }
+    80% {
+        color: lime;
+    }
+}
 
 
 
